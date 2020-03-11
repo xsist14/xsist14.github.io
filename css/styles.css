@@ -97,6 +97,27 @@ p {
   margin: auto;
 }
 
+@media (max-width: 1028px) {
+  .intro {
+    font-size: 24px;
+  }
+  .code-skill-description {
+    font-size: 20px;
+  }
+  .music-skill-description {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  .contact-message {
+    font-size: 20px;
+  }
+}
+
 
 .top-cloud {
   right: 300px;
