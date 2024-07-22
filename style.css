@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; 
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 650px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Center the image */
+}
+
+.title-container {
+    background-color: #000;
+    color: #d15c91; /* Muted Pink */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title-container h1 {
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Press Start 2P', cursive; 
+    color: #d15c91; /* Muted Pink */
+    text-shadow: 0 0 5px #66cdaa, 0 0 10px #66cdaa, 0 0 20px #66cdaa, 0 0 40px #66cdaa; /* Muted Green */
+}
+
+.display-board {
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #1a1a1a; 
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(209, 92, 145, 0.5); /* Muted Pink */
+}
+
+.display-board p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #66cdaa; /* Muted Green */
+}
+
+.button-container {
+    margin: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d15c91; /* Muted Pink */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff; 
+}
+
+.button:hover {
+    background-color: #66cdaa; /* Muted Green */
+}
+
+.hidden {
+    display: none;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Add Google Fonts link in HTML head */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');

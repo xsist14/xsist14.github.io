@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="gameTitle" class="title-container">
+        <h1>Monster Detective: The Hunt For Tame Swampmalo</h1>
+    </div>
+    <div id="displayBoard" class="hidden display-board">
+        <p id="locationText">You are in </p>
+        <p id="moneyText">Money: </p>
+        <p id="spiceText">Spice Amount: </p>
+        <p id="spicePriceText">Spice Price: </p>
+        <p id="playerHealthText">Player Health: </p>
+        <p id="monsterHealthText">Monster Health: </p>
+    </div>
+    
+    <div id="startPage" class="button-container">
+        <button class="button" onclick="updateLocation('Monster Detective HQ')">New Game</button>
+    </div>
+
+    <div id="locationPage" class="hidden button-container">
+        <button class="button" id="investigate" onclick="goToInvestigatePage()">Investigate</button>
+        <button class="button" onclick="goToMerchant()">Merchant</button>
+        <button class="button" onclick="goToBlacksmith()">Blacksmith</button>
+        <button class="button" onclick="goToStartPage()">Quit</button>
+    </div>
+    <div id="battlePage" class="hidden button-container">
+        <button class="button" onclick="fightMechanics()">Attack</button>
+        <button class="button" onclick="goToLocationPage()">Leave</button>
+    </div>
+
+    <div id="merchantWaresPage" class="hidden button-container">
+        <button class="button" onclick="buySpice()">Buy Spice</button>
+        <button class="button" onclick="buyAllSpice()">Buy All</button>
+        <button class="button" onclick="sellSpice()">Sell Spice</button>
+        <button class="button" onclick="sellAllSpice()">Sell All</button>
+
+        <button class="button" onclick="goToMerchant()">Leave</button>
+    </div>
+    
+    <div id="investigatePage" class="hidden button-container">
+        <button class="button" onclick="goToClue()">Get Clue</button>
+        <button class="button" onclick="goToTravel()">Travel</button>
+        <button class="button" onclick="goToLocationPage()">Leave</button>
+    </div>
+    
+    <div id="merchantPage" class="hidden button-container">
+        <button class="button" onclick="goToMerchantWares()">Make Transactions</button>
+        <button class="button" onclick="goToLocationPage()">Leave</button>
+    </div>
+    
+    <div id="blacksmithPage" class="hidden button-container">
+        <button class="button" onclick="buyFlyingSword()">Buy Flying Sword (1000)</button>
+        <button class="button" onclick="buySwordOfErdrick()">Buy Sword of Erdrick (5000)</button>
+        <button class="button" onclick="updateLocation('Utopia')">Buy City in a Bottle (20000)</button>
+        <button class="button" onclick="goToLocationPage()">Leave</button>
+    </div>
+    
+    <div id="travelPage" class="hidden button-container">
+        <button class="button" onclick="updateLocation('Cappadocia')">Cappadocia</button>
+        <button class="button" onclick="updateLocation('Istanbul')">Istanbul</button>
+        <button class="button" onclick="updateLocation('Long Beach')">Long Beach</button>
+        <button class="button" onclick="updateLocation('Kyoto')">Kyoto</button>
+        <button class="button" onclick="updateLocation('Los Angeles')">Los Angeles</button>
+        <button class="button" onclick="updateLocation('Bali')">Bali</button>
+        <button class="button" onclick="updateLocation('Pennsylvania')">Pennsylvania</button>
+
+        <button class="button" onclick="goToInvestigatePage()">Leave</button>
+    </div>
+    <div id="cluePage" class="hidden button-container">
+        <div id="clueDisplay"></div>
+        <button class="button" onclick="displayRandomClue()">Show a Random Clue</button>
+        <button class="button" onclick="goToInvestigatePage()">Leave</button>
+    </div>
+    <img id="locationImage" class="hidden" src="" alt="Location Image">
+    <img id="utopianWorldImage" class="hidden" src="you_win.jpg" alt="Utopian World">
+
+    <script src="scripts.js"></script>
+</body>
+</html>
