@@ -7,7 +7,8 @@ let monsterHealth = 100;
 let playerAttack = 5;
 let playerHealth = 100;
 let monsterAttack = 5;
-
+let hasFlyingSword = false;
+let hasSwordOfErdrick = false;
 
 window.correctTravelGuess = true;
 let destination = "";
@@ -20,7 +21,7 @@ function fightMechanics() {
     monsterAttack = Math.random() * (maxAttack - minAttack) + minAttack;
     monsterHealth -= playerAttack;
     if (monsterHealth <=0) {
-        money += 500;
+        money *= 5;
         monsterHealth = 100;
         playerHealth = 100;
         goToLocationPage();
@@ -109,6 +110,10 @@ function updateLocation(destination) {
         alert('You bought a City in a Bottle! You have won the game!');
         money -= 20000;
         locationImageElement.src = "you_win.png"; 
+        locationImageElement.classList.remove('hidden');
+    } else if (destination === "Utopia" && money < 20000) {
+        alert("you didn't have enough money to buy this but you can come visit this location anyway for fun")
+        locationImageElement.src = "easter_egg.png"; 
         locationImageElement.classList.remove('hidden');
     }
     
@@ -335,24 +340,39 @@ function displayRandomClue() {
 }
 
 function buyFlyingSword() {
-    if (money >= 1000) {
+    if (money >= 1000 && hasFlyingSword == false) {
         money -= 1000;
         playerAttack = 10;
         updateDisplay();
+        var moneyElement = document.getElementById("moneyText");
+        moneyElement.innerHTML = "Money: " + money;
         alert('You bought a Flying Sword!');
     } else {
-        alert('Not enough money!');
+        if(hasSwordOfErdrick == true || hasFlyingSword == true){
+            alert("You already Own this or better");
+        } else {
+            alert('Not enough money!');
+
+        }
     }
 }
 
 function buySwordOfErdrick() {
-    if (money >= 5000) {
+     
+    if (money >= 5000 && hasSwordOfErdrick == false) {
         money -= 5000;
         playerAttack = 20;
         updateDisplay();
+        var moneyElement = document.getElementById("moneyText");
+        moneyElement.innerHTML = "Money: " + money;
         alert('You bought the Sword of Erdrick!');
     } else {
-        alert('Not enough money!');
+        if(hasSwordOfErdrick == true){
+            alert("You already Own this");
+        } else {
+            alert('Not enough money!');
+
+        }
     }
 }
 
@@ -403,10 +423,6 @@ function goToMerchant() {
 }
 
 function goToMerchantWares() {
-    
-    
-    
-    
     hideAllPages();
     document.getElementById('merchantWaresPage').classList.remove('hidden');
 }
