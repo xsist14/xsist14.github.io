@@ -1,81 +1,167 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Jason Guest</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting Compassionately | Daniel Gaytan</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="top-container">
-    <img class="top-cloud" src="images/cloud.png" alt="cloud-img">
-    <h1>I'm Jason</h1>
-    <h2>
-      a <span class="pro">pro</span>grammer.
-    </h2>
-    <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
-    <img src="images/mountain.png" alt="mountain-img">
-  </div>
-  <div class="middle-container">
-    <div class="profile">
-      <img class="round-profile" src="images/profile.jpg" alt="me-img">
-      <h2>Hello.</h2>
-      <p class="intro"> I am a PHP/Web Developer. I ❤️ Coffee,
-        Bullet Journals and Music</p>
-    </div>
-    <hr>
-    <div class="skills">
-      <h2>My Skills.</h2>
-      <div class="skill-row">
-        <img class="code-img" src="images/tablet.png" alt="code-img">
-        <h3>Design &amp Development</h3>
-        <p class="code-skill-description">
-          I have been working in the tech industry for the past decade.
-          I started in Quality Assurance originally and now I have been a
-          software developer since 2017. I started learning to
-          code, because I wanted to make my own games. Over the past couple of years
-          I have learned a lot about QA, PHP, Frontend, Backend
-          and many kinds of websites.
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#" class="logo">Connecting Compassionately</a>
+      <button class="menu-toggle" aria-label="Open navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#therapy">Therapy</a></li>
+        <li><a href="#about">About Daniel</a></li>
+        <li><a href="#specialties">Specialties</a></li>
+        <li><a href="#contact" class="nav-button">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Outdoor therapy in Chicago</p>
+        <h1>You are worthy of love, healing, and becoming your most authentic self.</h1>
+        <p class="hero-text">
+          Daniel Gaytan offers down-to-earth, compassionate therapy for people seeking peace of mind,
+          self-understanding, and deeper connection.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="primary-button">Request a consultation</a>
+          <a href="#about" class="secondary-button">Meet Daniel</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="steps.jpg" alt="A peaceful moss-covered path with stone and wooden steps" class="hero-image" />
+        <div class="floating-card">
+          <strong>Therapy outside the office</strong>
+          <span>Walk, sit, breathe, and reflect in a natural setting.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section intro-section">
+      <div>
+        <p class="eyebrow">The heart of the work</p>
+        <h2>Facing stress with compassion instead of avoidance.</h2>
+      </div>
+      <div class="prose">
+        <p>
+          In this fast-paced world, we can react to or avoid our stresses rather than face them,
+          understand them, shift our views of them, and act according to our experiences.
+          Therapy creates room to slow down and find more peace of mind.
+        </p>
+        <p>
+          Through compassionate exploration and guidance, we create a safe space to honor and understand
+          different aspects of yourself, fostering acceptance and integration.
         </p>
       </div>
-      <div class="skill-row">
-        <img class="music-img" src="images/piano.png" alt="music-img">
-        <h3>Music</h3>
-        <p class="music-skill-description">
-          I've got some great headphones.
-          Jamming to music and writing code is kinda my thing.
-          I like all genres of music . . . maybe not screamo.
-          I apologize to all fans of screamo. I dig folk stuff, Elliott Smith,
-          classic rock, classical, alternative, hiphop and chill beats.
-          My music knowledge is vast.
+    </section>
+
+    <section id="therapy" class="image-text-section">
+      <div class="wide-image">
+        <img src="water.jpg" alt="A calm pond surrounded by trees and moss" />
+      </div>
+      <div class="section content-card">
+        <p class="eyebrow">Park-based therapy</p>
+        <h2>A calmer setting for meaningful conversation.</h2>
+        <p>
+          Daniel meets with people in Chicago parks for therapy that can include walking, sitting,
+          reflecting, and reconnecting with a sense of presence. Being outdoors can support a gentler
+          rhythm and a more grounded way of talking through difficult things.
         </p>
       </div>
-    </div>
-    <hr>
-    <div class="contact-me">
-      <h2>Get In Touch</h2>
-      <h3>If you wanna trade music recommendations.</h3>
-      <p class="contact-message">Do you love coffee as much as I do?
-        Let's talk about all the awesome music and types of coffee.
-        We can drink coffee while we code!</p>
-      <a class="btn" href="mailto:jason.d.guest@gmailcom">CONTACT ME</a>
-      <iframe src="https://embeds.beehiiv.com/03b0c9c5-acc8-4567-8129-97545be83bf7" data-test-id="beehiiv-embed" width="100%" height="320" frameborder="0" scrolling="no" style="border-radius: 4px; border: 2px solid #e5e7eb; margin: 0; background-color: transparent;"></iframe>
-    </div>
-  </div>
+    </section>
 
+    <section id="about" class="section about">
+      <div class="portrait-card">
+        <img src="profile.jpg" alt="Daniel Gaytan smiling outdoors in front of pink blossoms" />
+      </div>
+      <div>
+        <p class="eyebrow">Daniel Gaytan · he/him</p>
+        <h2>Down to earth, good natured, empathetic, and friendly.</h2>
+        <div class="prose">
+          <p>
+            I am a Chicagoan who is Mexican American, with a deep connection to family and friends,
+            and nearly twenty years of experience working with people in the mental health field.
+          </p>
+          <p>
+            It is my belief that each human has the capacity for transformation and becoming their
+            most authentic self.
+          </p>
+          <p>
+            By acknowledging and embracing challenging parts of ourselves, we can work toward healing
+            past wounds, resolving inner conflicts, and reclaiming selfhood.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <div class="bottom-container">
-    <a class="footer-link" href="https://www.linkedin.com/in/jason-guest-74941248/">LinkedIn</a>
-    <a class="footer-link" href="https://twitter.com/xsist14">Twitter</a>
-    <a class="footer-link" href="https://xsist14.github.io/">Website</a>
-    <p class="copyright">© 2020 Jason Guest.</p>
-    <div class="bottom-container">Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    <div class="bottom-container">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <section class="quote-section">
+      <blockquote>
+        “The point of therapy is caring, supporting, and empowering.”
+      </blockquote>
+      <p>
+        The practice can bring more peace of mind about who we are, opening and freeing our possibilities
+        and potential so we can connect with our good nature and be present.
+      </p>
+    </section>
 
-  </div>
-  </body>
+    <section id="specialties" class="section specialties">
+      <div>
+        <p class="eyebrow">Top specialties</p>
+        <h2>Areas of support</h2>
+      </div>
 
+      <div class="specialty-grid">
+        <div class="specialty-card featured">IFS Therapy</div>
+        <div class="specialty-card featured">Anxiety / Depression</div>
+        <div class="specialty-card featured">Life Transitions</div>
+      </div>
+
+      <div class="expertise">
+        <h3>Additional expertise</h3>
+        <div class="tag-list">
+          <span>ADHD</span><span>Anger Management</span><span>Career Counseling</span>
+          <span>Coping Skills</span><span>Life Coaching</span><span>Men's Issues</span>
+          <span>Mood Disorders</span><span>Peer Relationships</span><span>Racial Identity</span>
+          <span>Relationship Issues</span><span>School Issues</span><span>Self Esteem</span>
+          <span>Sexual Addiction</span><span>Sleep or Insomnia</span><span>Spirituality</span>
+          <span>Stress</span><span>Teen Violence</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div>
+        <p class="eyebrow">Availability</p>
+        <h2>Weekly and biweekly sessions</h2>
+        <p>
+          Monday through Friday, with daytime and early evening availability.
+        </p>
+      </div>
+
+      <form class="contact-form">
+        <h3>Request a consultation</h3>
+        <label>Name <input type="text" placeholder="Your name" /></label>
+        <label>Email <input type="email" placeholder="you@example.com" /></label>
+        <label>Message <textarea rows="5" placeholder="Tell Daniel a little about what you’re looking for"></textarea></label>
+        <button type="submit" class="primary-button">Send message</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Connecting Compassionately</p>
+    <p>Chicago, Illinois</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
