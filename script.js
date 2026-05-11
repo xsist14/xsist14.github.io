@@ -1,20 +1,21 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-const form = document.querySelector(".contact-form");
-const formStatus = document.querySelector(".form-status");
+const navToggle = document.querySelector(".nav-toggle");
+const siteNav = document.querySelector(".site-nav");
+const year = document.querySelector("#year");
 
-document.querySelector("#year").textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = siteNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => navLinks.classList.remove("open"));
-});
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  formStatus.textContent = "Thank you. This placeholder form can be connected to Daniel’s email or scheduling system later.";
-  form.reset();
-});
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
