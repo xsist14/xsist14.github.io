@@ -1,4 +1,4 @@
-const navToggle = document.querySelector(".nav-toggle");
+﻿const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const year = document.querySelector("#year");
 
@@ -17,5 +17,20 @@ if (navToggle && siteNav) {
       siteNav.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
     });
+  });
+}
+const phoneLink = document.querySelector(".phone-link");
+
+if (phoneLink) {
+  const parts = [phoneLink.dataset.phoneA, phoneLink.dataset.phoneB, phoneLink.dataset.phoneC];
+  const phoneNumber = parts.join("");
+  const phoneDisplay = phoneLink.querySelector(".phone-display");
+
+  if (phoneDisplay) {
+    phoneDisplay.textContent = `(${parts[0]}) ${parts[1]}-${parts[2]}`;
+  }
+
+  phoneLink.addEventListener("click", () => {
+    window.location.href = `tel:${phoneNumber}`;
   });
 }
