@@ -96,12 +96,15 @@ img { max-width: 100%; display: block; }
 }
 
 .hero {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 4rem;
-  padding: 5rem 6vw 4rem;
-  min-height: 78vh;
+  align-items: end;
+  padding: 7rem 6vw 5rem;
+  min-height: 82vh;
+  background:
+    linear-gradient(90deg, rgba(22, 46, 36, 0.82), rgba(22, 46, 36, 0.42) 54%, rgba(22, 46, 36, 0.16)),
+    url("trail.jpg") center / cover no-repeat;
+  color: var(--soft-white);
 }
 
 .eyebrow {
@@ -122,6 +125,11 @@ h1 {
   color: var(--forest-green);
 }
 
+.hero h1 {
+  color: var(--soft-white);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.32);
+}
+
 h2 {
   font-size: clamp(2rem, 4vw, 3.5rem);
   color: var(--forest-green);
@@ -137,6 +145,11 @@ h3 {
   margin: 1.5rem 0 2rem;
   font-size: 1.25rem;
   color: var(--muted);
+}
+
+.hero .eyebrow,
+.hero-text {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-actions {
@@ -173,32 +186,15 @@ h3 {
   color: var(--tree-bark-brown);
 }
 
-.hero-image-wrap { position: relative; }
-
-.hero-image-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 10%;
-  z-index: -1;
-  background: var(--sky-blue);
-  border-radius: 38% 62% 48% 52%;
-  transform: rotate(-7deg);
-}
-
-.hero-image {
-  width: min(460px, 100%);
-  margin-inline: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 2rem;
-  border: 10px solid rgba(255, 255, 255, 0.75);
-  box-shadow: var(--shadow);
-}
-
 .section,
 .intro-card,
-.image-feature {
+.image-feature,
+.photo-gallery {
   margin: 0 6vw;
+}
+
+.hero + .intro-card {
+  margin-top: 2rem;
 }
 
 .intro-card {
@@ -214,6 +210,21 @@ h3 {
   margin-bottom: 0;
   font-size: 1.15rem;
   color: var(--muted);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 2rem 0 0;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 14px 30px rgba(31, 95, 61, 0.16);
 }
 
 .section { padding: 5rem 0; }
@@ -232,6 +243,15 @@ h3 {
 .image-feature p {
   font-size: 1.1rem;
   color: var(--muted);
+}
+
+.about-photo {
+  width: 100%;
+  height: 320px;
+  margin-top: 2rem;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 14px 30px rgba(31, 95, 61, 0.16);
 }
 
 .image-feature {
@@ -291,12 +311,25 @@ blockquote {
 .contact-section { padding-top: 2rem; }
 
 .contact-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+  align-items: center;
+  gap: 2.5rem;
   padding: 3rem;
   border-radius: 2rem;
   background:
     linear-gradient(135deg, rgba(159, 211, 236, 0.35), rgba(246, 200, 76, 0.18)),
     rgba(255, 255, 255, 0.82);
   box-shadow: var(--shadow);
+}
+
+.contact-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 1.5rem;
+  box-shadow: 0 14px 30px rgba(31, 95, 61, 0.16);
 }
 
 .contact-details {
@@ -396,6 +429,7 @@ textarea:focus {
   .hero,
   .two-column,
   .service-grid,
+  .photo-gallery,
   .image-feature,
   .image-feature.reverse {
     grid-template-columns: 1fr;
@@ -415,8 +449,20 @@ textarea:focus {
     padding: 2rem;
   }
 
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-photo {
+    max-width: 360px;
+  }
+
   .image-feature img {
     height: 320px;
+  }
+
+  .photo-gallery img {
+    height: 300px;
   }
 }
 
