@@ -1,4 +1,4 @@
-﻿Connecting Compassionately - Email and Phone Contact Version
+Connecting Compassionately - Email and Phone Contact Version
 
 This version uses email and phone contact only. There is no embedded inquiry form.
 
@@ -14,7 +14,7 @@ Upload all files to the same folder on your website:
 send-inquiry.php is no longer used by the website. You can leave it off future uploads unless you want to keep a backup of the old PHP form setup.
 
 Contact info is set in index.html and script.js:
-  Email: gayranorama@gmail.com
+  Email: dan@connectingcompassionately.org
   Phone: displayed from small JavaScript-assembled parts to reduce simple scraping
 
 After uploading, test the Contact section and confirm the email link and phone button work as expected.
