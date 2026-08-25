@@ -1,36 +1,37 @@
-﻿const navToggle = document.querySelector(".nav-toggle");
-const siteNav = document.querySelector(".site-nav");
-const year = document.querySelector("#year");
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.site-nav');
 
-if (year) {
+if (nav && !nav.querySelector('a[href="resources.html"]')) {
+  const resourcesLink = document.createElement('a');
+  resourcesLink.href = 'resources.html';
+  resourcesLink.textContent = 'Resources';
+  if (location.pathname.endsWith('/resources.html')) resourcesLink.classList.add('active');
+  nav.insertBefore(resourcesLink, nav.querySelector('.nav-button'));
+}
+
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+}
+
+document.querySelectorAll('.year').forEach((year) => {
   year.textContent = new Date().getFullYear();
-}
+});
 
-if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-const phoneLink = document.querySelector(".phone-link");
-
-if (phoneLink) {
-  const parts = [phoneLink.dataset.phoneA, phoneLink.dataset.phoneB, phoneLink.dataset.phoneC];
-  const phoneNumber = parts.join("");
-  const phoneDisplay = phoneLink.querySelector(".phone-display");
-
-  if (phoneDisplay) {
-    phoneDisplay.textContent = `(${parts[0]}) ${parts[1]}-${parts[2]}`;
-  }
-
-  phoneLink.addEventListener("click", () => {
-    window.location.href = `tel:${phoneNumber}`;
-  });
-}
+document.querySelectorAll('.logo img').forEach((logo) => {
+  logo.style.width = '64px';
+  logo.style.height = '64px';
+  logo.style.flex = '0 0 64px';
+  logo.style.objectFit = 'cover';
+  logo.style.objectPosition = 'center';
+  logo.style.borderRadius = '50%';
+  logo.style.background = 'var(--cream)';
+  logo.style.border = '2px solid rgba(243, 181, 44, .78)';
+  logo.style.boxShadow = '0 7px 18px rgba(28, 44, 70, .2)';
+});
