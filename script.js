@@ -24,14 +24,4 @@ document.querySelectorAll('.year').forEach((year) => {
   year.textContent = new Date().getFullYear();
 });
 
-document.querySelectorAll('.logo img').forEach((logo) => {
-  logo.style.width = '64px';
-  logo.style.height = '64px';
-  logo.style.flex = '0 0 64px';
-  logo.style.objectFit = 'cover';
-  logo.style.objectPosition = 'center';
-  logo.style.borderRadius = '50%';
-  logo.style.background = 'var(--cream)';
-  logo.style.border = '2px solid rgba(243, 181, 44, .78)';
-  logo.style.boxShadow = '0 7px 18px rgba(28, 44, 70, .2)';
-});
+
